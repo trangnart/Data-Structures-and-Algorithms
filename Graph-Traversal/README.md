@@ -1,0 +1,1 @@
+Description: This code snippets are from C-based program module that uses Breadth-First Search (BFS) algorithm to create adjacency list representation of a graph. Determine shortest path between vertex pairs by identifying path with the minimum edges.
