@@ -5,7 +5,7 @@
  * to the end of a doubly linked list.
  */
 void append(List L, int x){
-    if (L == NULL){            // check if the list is exist
+    if (L == NULL){             // check if the list is exist
         printf("List Error: calling append() on an empty List\n");
         exit(EXIT_FAILURE);
     }
@@ -30,7 +30,7 @@ void append(List L, int x){
  */
 void prepend(List L, int x){
     if(L == NULL){              // check if the list is exist
-        printf("List Error: calling prepend() on NULL List reference\n");
+        printf("List Error: calling prepend() on an empty List\n");
         exit(EXIT_FAILURE);
     }
     Node N = newNode(x);        // create new node
@@ -65,7 +65,7 @@ void moveFront(List L){
  * to the next element in the list.
  */
 void moveNext(List L){
-    if (L == NULL){                     // check if the list is exist
+    if (L == NULL){                      // check if the list is exist
         printf("List Error: calling moveNext() on an empty List\n");
         exit(EXIT_FAILURE);
     }
@@ -85,7 +85,7 @@ void moveNext(List L){
  */
 void insertBefore(List L, int x){
     if(L == NULL){                 // check if the list is exist
-        printf("List Error: calling insertBefore() on NULL List reference\n");
+        printf("List Error: calling insertBefore() on an empty List\n");
         exit(EXIT_FAILURE);
     }
     if (L->cursor == L->front)     // check if the 'cursor' is pointing to the first element of the list
@@ -101,10 +101,8 @@ void insertBefore(List L, int x){
    }
 }
 
-// the code below is print out the contents of a file
-List sorted = newList();                  // create a new empty linked list
-
 // insertion sort algorithm
+List sorted = newList();                  // create a new empty linked list
 for (idx = 0; idx < lines; idx++){        // iterate over the input array
     if (isEmpty(sorted))                  // called isEmpty() func to check if the list is empty
         append(sorted, idx);              // append the current index
@@ -126,12 +124,4 @@ for (idx = 0; idx < lines; idx++){        // iterate over the input array
             }
         }
     }
-}
-
-moveFront(sorted);                          // move the cursor of the list to the front
-while (index(sorted) >= 0){                 // iterate over the elements in the list
-    fprintf(out, "%s", array[get(sorted)]); // write the current string to the output file
-    moveNext(sorted);                       // move the cursor to the next element in the list
-    if (index(sorted) >= 0)                 // if there are more elements in the list
-        fprintf(out, "\n");                 // write a newline character to the output file
 }
