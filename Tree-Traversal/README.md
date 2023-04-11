@@ -1,0 +1,1 @@
+Description: A C++-based program using Binary Search Tree (BST) algorithm to sort input keys alphabetically. Read in single strings from a file and output a sorted list of words with values representing the line numbers where the string was originally located in the input file.
